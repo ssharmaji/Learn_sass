@@ -1,0 +1,3 @@
+1. Whats diffrent between post and pages?
+2. How to manage blog post content on listing page?
+3. What is wp_query with $args variable
