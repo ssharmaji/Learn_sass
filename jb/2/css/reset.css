@@ -1,0 +1,33 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+.body{
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;;
+    background: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+li{
+    list-style: none;
+}
+
+
+
+
+/*------common.css-----*/
+.section{
+    width: 100%;
+    float: left;
+}
+.center{
+    text-align: center;
+}
