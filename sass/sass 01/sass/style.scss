@@ -1,0 +1,81 @@
+$gray : #ccc;
+@mixin radius($val){
+    border-radius: $val;
+    -moz-border-radius: $val;
+    -o-border-radius: $val;
+    -webkit-border-radius: $val;
+    -ms-border-radius: $val;
+}
+@import"partials/header";
+@import"partials/main";
+@import"partials/footer";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    background: #fff;
+}
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+@for $d from 1 through 12{
+    col-md-#{$d}{
+        width: $d * 100% /12;
+    }
+}
+@mixin grid($name, $col){
+    @for $m from 1 through 12{
+        col-#{$name}-#{$m}{
+            width: 100% / $col * $m;
+        }
+    }
+}
+@include grid(sm,12);
+$color: facebook , twiter , google , youtube;
+$count:1;
+@each $start in $color{
+    p{
+        &:nth-child(#{$count}){
+            background: #{$start};
+        }
+    }
+    $count: $count + 1;
+}
+
+
+@mixin tringle($width,$dir,$color){
+    @if $dir == up{
+        border-left: solid $width transparent;
+        border-right: solid $width transparent;
+        border-bottom: solid $width $color;
+    }
+    @else if $dir == down{
+        border-left: solid $width transparent;
+        border-right: solid $width transparent;
+        border-top: solid $width $color;
+    }
+    @else if $dir == left{
+        border-top: solid $width transparent;
+        border-bottom: solid $width transparent;
+        border-right: solid $width $color;
+    }
+    @else if $dir == right{
+        border-top: solid $width transparent;
+        border-bottom: solid $width transparent;
+        border-left: solid $width $color;
+    }
+}
+
+.tingle{
+    @include tringle(20px,left,#f00);
+}
+.tingle-right{
+    @include tringle(20px,right,#f00);
+}
+
+

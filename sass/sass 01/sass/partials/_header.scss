@@ -1,0 +1,31 @@
+header{
+    width: 100%;
+    float: left;
+    padding: 10px;
+    .logo{
+        float: left;
+        img{
+            width: 100px;
+        }
+    }
+    .menu{
+        float: right;
+        li{
+            float: left;
+            list-style: none;
+            a{
+                text-decoration: none;
+                color: #000;
+                padding: 0px 20px;
+                display: block;
+                line-height: 93px;
+                font-size: 16px;
+                transition: all 0.5s;
+            }
+            a:hover{
+                background: $gray;
+                @include radius(20px);
+            }
+        }
+    }
+}
